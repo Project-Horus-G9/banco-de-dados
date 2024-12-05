@@ -192,7 +192,7 @@ def exibir_arquivos_mais_recentes(bucket_name, arquivo_txt):
         except Exception as e:
             print(f"Erro ao processar o arquivo {arquivo}: {e}")
 
-    arquivo_sql = "/home/ubuntu/horus/transfer_data.sql"
+    arquivo_sql = "/home/ubuntu/horus/banco-de-dados/transfer_data.sql"
     executar_script_sql("root", "root.123", arquivo_sql)
 
 # Defina o nome do bucket e o arquivo de texto

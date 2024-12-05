@@ -8,6 +8,15 @@ CREATE TABLE empresa(
     cnpj CHAR(14)
 );
 
+CREATE TABLE usuario(
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    senha VARCHAR(100),
+    fk_empresa INT,
+    FOREIGN KEY (fk_empresa) REFERENCES empresa(id_empresa) ON DELETE CASCADE
+);
+
 CREATE TABLE endereco(
 	id_endereco INT PRIMARY KEY AUTO_INCREMENT,
     rua VARCHAR(100),
