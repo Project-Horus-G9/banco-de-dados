@@ -5,7 +5,7 @@ USE horus_trusted;
 CREATE TABLE empresa(
     id_empresa  INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
-    cnpj CHAR(14)
+    cnpj CHAR(18)
 );
 
 CREATE TABLE usuario(
@@ -24,7 +24,7 @@ CREATE TABLE endereco(
     bairro VARCHAR(100),
     cidade VARCHAR(100),
     estado VARCHAR(100),
-    cep CHAR(8),
+    cep CHAR(10),
     fk_empresa INT,
     FOREIGN KEY (fk_empresa) REFERENCES empresa(id_empresa) ON DELETE CASCADE
 );
