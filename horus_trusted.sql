@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS horus_trusted;
+
 CREATE DATABASE horus_trusted;
 
 USE horus_trusted;
@@ -59,13 +61,5 @@ CREATE TABLE dados_leitura(
     obstrucao VARCHAR(45),
     data DATETIME,
     fk_painel INT,
-    fk_setor INT,                -- Referência para setor
-    fk_empresa INT,              -- Referência para empresa
-    fk_usuario INT,              -- Referência para usuário
-    fk_endereco INT,             -- Referência para endereço
-    FOREIGN KEY (fk_painel) REFERENCES painel(id_painel) ON DELETE CASCADE,
-    FOREIGN KEY (fk_setor) REFERENCES setor(id_setor) ON DELETE CASCADE,
-    FOREIGN KEY (fk_empresa) REFERENCES empresa(id_empresa) ON DELETE CASCADE,
-    FOREIGN KEY (fk_usuario) REFERENCES usuario(id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (fk_endereco) REFERENCES endereco(id_endereco) ON DELETE CASCADE
+    FOREIGN KEY (fk_painel) REFERENCES painel(id_painel) ON DELETE CASCADE
 );
